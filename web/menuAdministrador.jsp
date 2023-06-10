@@ -23,15 +23,15 @@
                     </li>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Reportes</a>
-                    </li>
+                    </li> 
                      <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Reservas</a>
                     </li>            
                      <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Comprobantes</a>
+                        <a style="margin-left: 10px; border: none" class="nav-link active" href="Controlador?menu=Venta&accion=default" target="miContenedor">Comprobantes</a>
                     </li>            
                 </ul>
-                <div class="btn-group" style="position: absolute; left: 1320px;"> 
+                <div class="btn-group" style="position: absolute; left: 1320px;">  
                     <button type="button" class="nav-link dropdown-toggle btn btn-link position-static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; color: black;  text-decoration: none;">
                          ${persona.getNombre()}
                     </button>
