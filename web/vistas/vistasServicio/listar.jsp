@@ -15,7 +15,7 @@
     </head>
     <body>
         <div class="container">
-            <h1>Servicios</h1>
+            <h1>Servicios SPA</h1>
              <a class="btn btn-success" href="ControladorServicio?accion=add">Agregar Nueva Persona</a>
              <br>
              <br>
