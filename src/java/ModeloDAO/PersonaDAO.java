@@ -34,7 +34,8 @@ public class PersonaDAO implements CRUD{
         }
         return pe;
     }
-      
+     
+    
     @Override
     public List listar() {
         ArrayList<Persona>list=new ArrayList<>();

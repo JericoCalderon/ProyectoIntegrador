@@ -2,7 +2,6 @@
 <%@page import="java.util.Iterator"%>
 <%@page import="Modelo.Persona"%>
 <%@page import="java.util.List"%>
-<%@page import="Controlador.*"%>
 <%@page import="java.sql.*"%>
 <%@page import="ModeloDAO.PersonaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

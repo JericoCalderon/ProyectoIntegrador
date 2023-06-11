@@ -18,27 +18,30 @@
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active"  href="ControladorPersona?accion=listar" target="miContenedor">Personas</a>
                     </li>
+                     <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="nav-link active" href="ControladorReserva?accion=listar" target="miContenedor">Reservas</a>
+                    </li>
                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Rol</a>
+                        <a style="margin-left: 10px; border: none" class="nav-link active" href="ControladorServicio?accion=listar" target="miContenedor">Servicios</a>
+                    </li>          
+                    <li class="nav-item">
+                        <a style="margin-left: 10px; border: none" class="nav-link active" href="ControladorTecnico?accion=listar" target="miContenedor">Técnicos</a>
                     </li>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Reportes</a>
                     </li> 
-                     <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Reservas</a>
-                    </li>            
                      <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active" href="Controlador?menu=Venta&accion=default" target="miContenedor">Comprobantes</a>
                     </li>            
                 </ul>
                 <div class="btn-group" style="position: absolute; left: 1320px;">  
                     <button type="button" class="nav-link dropdown-toggle btn btn-link position-static" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; color: black;  text-decoration: none;">
-                         ${persona.getNombre()}
+                         Proyecto Integrador
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i></a>
-                        <a class="dropdown-item" href="#">${persona.getDNI()}</a>
-                        <a class="dropdown-item" href="#">${persona.getEmail()}</a>
+                        <a class="dropdown-item" href="#">Usuario</a>
+                        <a class="dropdown-item" href="#">Usuario.@gmail.com</a>
                         <div class="dropdown-divider"></div>
                         <form class="dropdown-item" method="POST" action="Validar">
                             <button class="dropdown-item" type="submit" name="accion" value="Salir">Cerrar Sesion</button>

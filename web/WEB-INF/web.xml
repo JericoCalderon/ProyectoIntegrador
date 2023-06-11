@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>ControladorServicio</servlet-name>
+        <servlet-class>Controlador.ControladorServicio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorTecnico</servlet-name>
+        <servlet-class>Controlador.ControladorTecnico</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorReserva</servlet-name>
+        <servlet-class>Controlador.ControladorReserva</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ControladorServicio</servlet-name>
+        <url-pattern>/ControladorServicio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorTecnico</servlet-name>
+        <url-pattern>/ControladorTecnico</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorReserva</servlet-name>
+        <url-pattern>/ControladorReserva</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
