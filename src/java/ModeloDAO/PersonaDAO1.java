@@ -14,6 +14,31 @@ public class PersonaDAO1 implements CRUD{
     ResultSet rs;
     Persona p=new Persona();
     
+    public Persona BuscarCliente(int idPersona){
+        Persona persona = new Persona();
+        String consulta = "SELECT * FROM persona WHERE idPersona = ? " ;
+        con = cn.getConnection();
+        try {
+            ps = con.prepareStatement(consulta); 
+            ps.setInt(1, idPersona);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                persona.setIdPersona(rs.getInt("idPersona"));              
+                persona.setNomPersona(rs.getString("nomPersona")); 
+                persona.setApelPat(rs.getString("apelPat")); 
+                persona.setApelMat(rs.getString("apelMat")); 
+                persona.setFechNaci(rs.getString("fechNaci")); 
+                persona.setDni(rs.getString("dni"));
+                persona.setDireccion(rs.getString("direccion"));
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setEstado(rs.getString("estado"));
+                persona.setEmail(rs.getString("email"));         
+                System.err.println(""+persona.getNomPersona());
+              }
+        } catch (Exception e) {
+        }
+        return persona;
+    }
     @Override
     public List listar() {
         ArrayList<Persona>list=new ArrayList<>();
