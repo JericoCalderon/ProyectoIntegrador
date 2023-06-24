@@ -12,6 +12,18 @@
         <servlet-name>ControladorReserva</servlet-name>
         <servlet-class>Controlador.ControladorReserva</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ControladorUsuario</servlet-name>
+        <servlet-class>Controlador.ControladorUsuario</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorPersona1</servlet-name>
+        <servlet-class>Controlador.ControladorPersona1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ControladorInsumos</servlet-name>
+        <servlet-class>Controlador.ControladorInsumos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControladorServicio</servlet-name>
         <url-pattern>/ControladorServicio</url-pattern>
@@ -23,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>ControladorReserva</servlet-name>
         <url-pattern>/ControladorReserva</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorUsuario</servlet-name>
+        <url-pattern>/ControladorUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorPersona1</servlet-name>
+        <url-pattern>/ControladorPersona1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ControladorInsumos</servlet-name>
+        <url-pattern>/ControladorInsumos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

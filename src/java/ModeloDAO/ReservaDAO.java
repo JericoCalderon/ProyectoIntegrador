@@ -20,7 +20,7 @@ public class ReservaDAO implements CRUDRESERVA {
         ArrayList<Reserva>list=new ArrayList<>();
         String sql="SELECT * FROM reserva";
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
@@ -34,6 +34,7 @@ public class ReservaDAO implements CRUDRESERVA {
                 res.setIdTipo(rs.getInt("idTipo"));
                 res.setFormaPago(rs.getString("formaPago"));
                 res.setEstado(rs.getString("estado"));
+                res.setSalaAtencion(rs.getString("salaAtencion"));
                 list.add(res);
             }
         } catch (Exception e) {
@@ -45,7 +46,7 @@ public class ReservaDAO implements CRUDRESERVA {
     public Reserva list(int idReserva) {
          String sql="SELECT * FROM reserva WHERE idReserva= " + idReserva;
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
@@ -58,6 +59,7 @@ public class ReservaDAO implements CRUDRESERVA {
                 re.setIdTipo(rs.getInt("idTipo"));
                 re.setFormaPago(rs.getString("formaPago"));
                 re.setEstado(rs.getString("estado"));
+                re.setSalaAtencion(rs.getString("salaAtencion"));
             }
         } catch (Exception e) {
         }
@@ -67,9 +69,9 @@ public class ReservaDAO implements CRUDRESERVA {
     @Override
     public boolean add(Reserva res) {
 
-       String sql="INSERT INTO reserva (idPersona, idServicio, fechReserva, horaReserva, idTecnico, idTipo, formaPago, estado) values ('"+res.getIdPersona()+"', '"+res.getIdServicio()+"', '"+res.getFechReserva()+"', '"+res.getHoraReserva()+"', '"+res.getIdTecnico()+"', '"+res.getIdTipo()+"', '"+res.getFormaPago()+"', '"+res.getEstado()+"')";
+       String sql="INSERT INTO reserva (idPersona, idServicio, fechReserva, horaReserva, idTecnico, idTipo, formaPago, estado, salaAtencion) values ('"+res.getIdPersona()+"', '"+res.getIdServicio()+"', '"+res.getFechReserva()+"', '"+res.getHoraReserva()+"', '"+res.getIdTecnico()+"', '"+res.getIdTipo()+"', '"+res.getFormaPago()+"', '"+res.getEstado()+"', '"+res.getSalaAtencion()+"')";
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -80,9 +82,9 @@ public class ReservaDAO implements CRUDRESERVA {
 
     @Override
     public boolean edit(Reserva res) {
-        String sql="update reserva set idPersona ='"+res.getIdPersona()+"', idServicio ='"+res.getIdServicio()+"', fechReserva ='"+res.getFechReserva()+"', horaReserva ='"+res.getHoraReserva()+"', idTecnico = '"+res.getIdTecnico()+"', idTipo ='"+res.getIdTipo()+"', formaPago ='"+res.getFormaPago()+"', estado ='"+res.getEstado()+"'where idReserva ="+res.getIdReserva();
+        String sql="update reserva set idPersona ='"+res.getIdPersona()+"', idServicio ='"+res.getIdServicio()+"', fechReserva ='"+res.getFechReserva()+"', horaReserva ='"+res.getHoraReserva()+"', idTecnico = '"+res.getIdTecnico()+"', idTipo ='"+res.getIdTipo()+"', formaPago ='"+res.getFormaPago()+"', estado ='"+res.getEstado()+"', salaAtencion ='"+res.getSalaAtencion()+"'where idReserva ="+res.getIdReserva();
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -94,7 +96,7 @@ public class ReservaDAO implements CRUDRESERVA {
     public boolean eliminar(int idReserva) {
         String sql="delete from reserva where idReserva="+idReserva;
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {

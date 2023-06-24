@@ -58,6 +58,7 @@ public class ControladorReserva extends HttpServlet {
             int idTipo= Integer.parseInt( request.getParameter("txtIdTipo"));
             String formaPago=request.getParameter("txtFormaPago");
             String estado=request.getParameter("txtEstado");
+            String salaAtencion=request.getParameter("txtSalaAtencion");
             r.setIdPersona(idPersona);
             r.setIdServicio(idServicio);
             r.setFechReserva(fechReserva);
@@ -66,6 +67,7 @@ public class ControladorReserva extends HttpServlet {
             r.setIdTipo(idTipo);
             r.setFormaPago(formaPago);
             r.setEstado(estado);
+            r.setSalaAtencion(salaAtencion);
             dao.add(r);
             acceso=listar;
         }
@@ -83,6 +85,7 @@ public class ControladorReserva extends HttpServlet {
             int idTipo= Integer.parseInt( request.getParameter("txtIdTipo"));
             String formaPago=request.getParameter("txtFormaPago");
             String estado=request.getParameter("txtEstado");
+            String salaAtencion=request.getParameter("txtSalaAtencion");
             r.setIdReserva(idReserva);
             r.setIdPersona(idPersona);
             r.setIdServicio(idServicio);
@@ -92,6 +95,7 @@ public class ControladorReserva extends HttpServlet {
             r.setIdTipo(idTipo);
             r.setFormaPago(formaPago);
             r.setEstado(estado);
+            r.setSalaAtencion(salaAtencion);
             dao.edit(r);
             acceso=listar;
         }

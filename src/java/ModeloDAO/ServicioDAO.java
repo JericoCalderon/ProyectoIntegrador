@@ -22,7 +22,7 @@ public class ServicioDAO implements CRUDSERVICIO {
         ArrayList<Servicio>list=new ArrayList<>();
         String sql="SELECT * FROM servicio";
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
@@ -44,7 +44,7 @@ public class ServicioDAO implements CRUDSERVICIO {
         
          String sql="SELECT * FROM servicio WHERE idServicio= " + idServicio;
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while(rs.next()){
@@ -64,7 +64,7 @@ public class ServicioDAO implements CRUDSERVICIO {
         
          String sql="INSERT INTO servicio (nomServicio, descripcion, tiempo, precio) values ('"+ser.getNomServicio()+"', '"+ser.getDescripcion()+"', '"+ser.getTiempo()+"', '"+ser.getPrecio()+"')";
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -77,7 +77,7 @@ public class ServicioDAO implements CRUDSERVICIO {
     public boolean edit(Servicio ser) {
         String sql="update servicio set nomServicio ='"+ser.getNomServicio()+"', descripcion ='"+ser.getDescripcion()+"', tiempo ='"+ser.getTiempo()+"', precio ='"+ser.getPrecio()+"'where idServicio ="+ser.getIdServicio();
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
@@ -89,7 +89,7 @@ public class ServicioDAO implements CRUDSERVICIO {
     public boolean eliminar(int idServicio) {
         String sql="delete from servicio where idServicio="+idServicio;
         try {
-            con=cn.Conexion();
+            con=cn.getConnection();
             ps=con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {

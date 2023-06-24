@@ -1,7 +1,7 @@
 package Controlador;
 
 import Modelo.Persona;
-import ModeloDAO.PersonaDAO;
+import ModeloDAO.PersonaDAO1;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,34 +10,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(name = "ControladorPersona1", urlPatterns = {"/ControladorPersona1"})
+public class ControladorPersona1 extends HttpServlet {
 
-
-@WebServlet(name = "ControladorPersona", urlPatterns = {"/ControladorPersona"})
-public class ControladorPersona extends HttpServlet {
-
-        String listar="vistas/vistasPersona/listar.jsp";
-        String add="vistas/vistasPersona/add.jsp";
-        String edit="vistas/vistasPersona/edit.jsp";
+        String listar="vistas/vistasPersona1/listar.jsp";
+        String add="vistas/vistasPersona1/add.jsp";
+        String edit="vistas/vistasPersona1/edit.jsp";
         Persona p=new Persona();
-        PersonaDAO dao=new PersonaDAO();
+        PersonaDAO1 dao=new PersonaDAO1();
     
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    
+protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+throws ServletException, IOException {
         
         String accion=request.getParameter("accion");
         switch(accion) {
-            case "menuAdministrador":
-                request.getRequestDispatcher("menuAdministrador.jsp").forward(request, response);
-                break;
-             
-            default:
-                throw new AssertionError();
+        case "menuAdministrador":
+            request.getRequestDispatcher("menuAdministrador.jsp").forward(request, response);
+            break;
+
+        default:
+            throw new AssertionError();
         }
     }
-    
-@Override
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+       
         String acceso="";
         String action=request.getParameter("accion");
         if(action.equalsIgnoreCase("listar")){
@@ -110,13 +110,11 @@ public class ControladorPersona extends HttpServlet {
 
         RequestDispatcher vista=request.getRequestDispatcher(acceso);
         vista.forward(request, response);
+    }      
     
-    }
-      
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
- }
-  
+}

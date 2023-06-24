@@ -12,8 +12,8 @@
     <body>
         <div class="container">
             <div class="col-lg-6">
-                <h1>Agregar Administrador</h1>
-                <form action="ControladorPersona">
+                <h1>Agregar Cliente</h1>
+                <form action="ControladorPersona1">
                     Nombres: <br>
                     <input class="form-control" type="text" name="txtNomPersona" placeholder="Ingresar el Nombre Completo"><br>
                     Apellido Paterno: <br>
@@ -23,22 +23,21 @@
                     Fecha Nacimiento: <br>
                     <input class="form-control" type="date" name="txtFechNacimiento"><br>
                     DNI: <br>
-                    <input class="form-control" type="number" name="txtDNI" placeholder="Ingresar el DNI" ><br>
+                    <input class="form-control" type="number" name="txtDNI" placeholder="Ingresar el DNI"><br>
                     Dirección: <br>
-                    <input class="form-control" type="text" name="txtDireccion" placeholder="Ingresar la Dirección"><br>
+                    <input class="form-control" type="text" name="txtDireccion" placeholder="Ingresar la Dirección""><br>
                     Teléfono: <br>
                     <input class="form-control" type="number" name="txtTelefono" placeholder="Ingresar el Teléfono"><br>
-                    Estado: <br>
+                    Estado:<br>
                     <input class="form-control" type="text" name="txtEstado" placeholder="Ingresar Estado: 'Activo'"><br>
                     Email: <br>
                     <input class="form-control" type="email" name="txtEmail" placeholder="Ingresar el Email"><br>
                     Usuario: <br>
-                    <input class="form-control" type="number" name="txtIdUsuario" placeholder="Ingresar el Código del Usuario del Administrador"><br>
+                    <input class="form-control" type="number" name="txtIdUsuario" placeholder="Usuario del Cliente: 1"><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar">
-                    <a href="ControladorPersona?accion=listar">Regresar</a>
+                    <a href="ControladorPersona1?accion=listar">Regresar</a>
                 </form>
             </div>
-
         </div>
     </body>
 </html>

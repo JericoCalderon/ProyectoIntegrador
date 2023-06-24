@@ -1,9 +1,11 @@
+<%@page import="Modelo.Rol"%>
+<%@page import="ModeloDAO.RolDAO"%>
 <%@page import="Config.Conexion"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="Modelo.Persona"%>
 <%@page import="java.util.List"%>
 <%@page import="java.sql.*"%>
-<%@page import="ModeloDAO.PersonaDAO"%>
+<%@page import="ModeloDAO.PersonaDAO1"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     if (session.getAttribute("usuario") != null) {
@@ -18,11 +20,11 @@
     </head>
     <body>
         <div class="container">
-            <h1>Administradores</h1>
-            <a class="btn btn-success" href="ControladorPersona?accion=add">Agregar Nuevo Administrador</a>
+            <h1>Clientes</h1>
+            <a class="btn btn-success" href="ControladorPersona1?accion=add">Agregar Nuevo Cliente</a>
             <br>
             <br>
-            <a class="btn btn-success" href="ControladorPersona?accion=listar">Mostrar Datos</a>
+            <a class="btn btn-success" href="ControladorPersona1?accion=listar">Mostrar Datos</a>
             <br>
             <br>
             <label>Buscar: </label>
@@ -32,7 +34,7 @@
             <table class="table table-bordered" id="datos">
                 <thead>
                     <tr>
-                        <th class="text-center">ADMINISTRADOR</th>
+                        <th class="text-center">CLIENTE</th>
                         <th class="text-center">NOMBRES</th>
                         <th class="text-center">APELLIDO PATERNO</th>
                         <th class="text-center">APELLIDO MATERNO</th>
@@ -47,7 +49,7 @@
                     </tr>
                 </thead>
                 <%
-                    PersonaDAO dao = new PersonaDAO();
+                    PersonaDAO1 dao = new PersonaDAO1();
                     List<Persona> list = dao.listar();
                     Iterator<Persona> iter = list.iterator();
                     Persona per = null;
@@ -69,8 +71,8 @@
                         <td class="text-center"><%= per.getEmail()%></td>
                         <td class="text-center"><%= per.getIdUsuario()%></td>
                         <td class="text-center">
-                            <a class="btn btn-warning" href="ControladorPersona?accion=editar&idPersona=<%= per.getIdPersona()%>">Editar</a>
-                            <a class="btn btn-danger" href="ControladorPersona?accion=eliminar&idPersona=<%= per.getIdPersona()%>">Remove</a>
+                            <a class="btn btn-warning" href="ControladorPersona1?accion=editar&idPersona=<%= per.getIdPersona()%>">Editar</a>
+                            <a class="btn btn-danger" href="ControladorPersona1?accion=eliminar&idPersona=<%= per.getIdPersona()%>">Remove</a>
                         </td>
                     </tr>
                     <%}%>

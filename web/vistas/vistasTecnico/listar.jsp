@@ -5,6 +5,10 @@
 <%@page import="java.sql.*"%>
 <%@page import="ModeloDAO.TecnicoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+if(session.getAttribute("usuario") != null)
+{
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +20,7 @@
     <body>
         <div class="container">
             <h1>Personas</h1>
-             <a class="btn btn-success" href="ControladorTecnico?accion=add">Agregar Nueva Persona</a>
+             <a class="btn btn-success" href="ControladorTecnico?accion=add">Agregar Nuevo Técnico</a>
              <br>
              <br>
              <a class="btn btn-success" href="ControladorTecnico?accion=listar">Mostrar Datos</a>
@@ -29,8 +33,8 @@
             <table class="table table-bordered" id="datos">
                 <thead>
                     <tr>
-                        <th class="text-center">IDTecnico</th>
-                        <th class="text-center">NOMBRE</th>
+                        <th class="text-center">TÉCNICO</th>
+                        <th class="text-center">NOMBRES</th>
                         <th class="text-center">APELLIDO PATERNO</th>
                         <th class="text-center">APELLIDO MATERNO</th>
                         <th class="text-center">DNI</th>
@@ -69,3 +73,8 @@
     </div>
     </body>
 </html>
+<%
+    }else{
+        response.sendRedirect("index.jsp");
+    }
+%>

@@ -1,5 +1,5 @@
 <%@page import="Modelo.Persona"%>
-<%@page import="ModeloDAO.PersonaDAO"%>
+<%@page import="ModeloDAO.PersonaDAO1"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     if (session.getAttribute("usuario") != null) {
@@ -15,13 +15,13 @@
         <div class="container">
             <div class="col-lg-6">
                 <%
-                    PersonaDAO dao = new PersonaDAO();
+                    PersonaDAO1 dao = new PersonaDAO1();
                     int idPersona = Integer.parseInt((String) request.getAttribute("idper"));
                     Persona p = (Persona) dao.list(idPersona);
                 %>
-                <h1>Modificar Administrador</h1>
-                <form action="ControladorPersona">
-                    Administrador: <br>    
+                <h1>Modificar Cliente</h1>
+                <form action="ControladorPersona1">
+                    Cliente: <br>    
                     <input type =" text" name ="txtIdPersona" value="<%= p.getIdPersona()%>" readonly="readonly" ><br><br>
                     Nombres: <br>
                     <input class="form-control" type="text" name="txtNomPersona" value="<%= p.getNomPersona()%>"><br>
@@ -44,7 +44,7 @@
                     Usuario: <br>
                     <input class="form-control" type="number" name="txtIdUsuario" value="<%= p.getIdUsuario()%>"><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Actualizar"> 
-                    <a href="ControladorPersona?accion=listar">Regresar</a>
+                    <a href="ControladorPersona1?accion=listar">Regresar</a>
                 </form>
             </div>
         </div>

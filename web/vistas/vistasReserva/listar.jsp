@@ -5,6 +5,10 @@
 <%@page import="java.sql.*"%>
 <%@page import="ModeloDAO.ReservaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+if(session.getAttribute("usuario") != null)
+{
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +20,7 @@
     <body>
         <div class="container">
             <h1>Reservas</h1>
-             <a class="btn btn-success" href="ControladorReserva?accion=add">Agregar Nueva Persona</a>
+             <a class="btn btn-success" href="ControladorReserva?accion=add">Agregar Nueva Reserva</a>
              <br>
              <br>
              <a class="btn btn-success" href="ControladorReserva?accion=listar">Mostrar Datos</a>
@@ -29,15 +33,16 @@
             <table class="table table-bordered" id="datos">
                 <thead>
                     <tr>
-                        <th class="text-center">IDReserva</th>
-                        <th class="text-center">IDPersona</th>
-                        <th class="text-center">IDServicio</th>
+                        <th class="text-center">RESERVA</th>
+                        <th class="text-center">CLIENTE</th>
+                        <th class="text-center">SERVICIO</th>
                         <th class="text-center">FECHA RESERVA</th>
                         <th class="text-center">HORA RESERVA</th>
-                        <th class="text-center">IDTécnico</th>
-                        <th class="text-center">IDTipo</th>
-                        <th class="text-center">FORMA PAGO</th>
+                        <th class="text-center">TÉCNICO</th>
+                        <th class="text-center">TIPO DE PAGO</th>
+                        <th class="text-center">FORMA DE PAGO</th>
                         <th class="text-center">ESTADO</th>
+                        <th class="text-center">SALA ATENCIÓN</th>
                         <th class="text-center">ACCIONES</th>
                     </tr>
                 </thead>
@@ -60,6 +65,7 @@
                         <td class="text-center"><%= res.getIdTipo()%></td>
                         <td class="text-center"><%= res.getFormaPago()%></td>
                         <td class="text-center"><%= res.getEstado()%></td>
+                        <td class="text-center"><%= res.getSalaAtencion()%></td>
                          <td class="text-center">
                             <a class="btn btn-warning" href="ControladorReserva?accion=editar&idReserva=<%= res.getIdReserva()%>">Editar</a>
                             <a class="btn btn-danger" href="ControladorReserva?accion=eliminar&idReserva=<%= res.getIdReserva()%>">Remove</a>
@@ -71,3 +77,8 @@
     </div>
     </body>
 </html>
+<%
+    }else{
+        response.sendRedirect("index.jsp");
+    }
+%>

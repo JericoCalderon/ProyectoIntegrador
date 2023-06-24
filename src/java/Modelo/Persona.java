@@ -1,9 +1,7 @@
 package Modelo;
 
-
 public class Persona {
         private int idPersona;
-        private int idRol;
         private String nomPersona;
         private String apelPat;
         private String apelMat;
@@ -13,15 +11,13 @@ public class Persona {
         private String telefono;
         private String estado;
         private String email;
-        private String contrasena;
+        private int idUsuario;
         
-
     public Persona() {
     }
 
-    public Persona(int idPersona, int idRol, String nomPersona, String apelPat, String apelMat, String fechNaci, String dni, String direccion, String telefono, String estado, String email, String contrasena) {
+    public Persona(int idPersona, String nomPersona, String apelPat, String apelMat, String fechNaci, String dni, String direccion, String telefono, String estado, String email, int idUsuario) {
         this.idPersona = idPersona;
-        this.idRol = idRol;
         this.nomPersona = nomPersona;
         this.apelPat = apelPat;
         this.apelMat = apelMat;
@@ -31,7 +27,7 @@ public class Persona {
         this.telefono = telefono;
         this.estado = estado;
         this.email = email;
-        this.contrasena = contrasena;
+        this.idUsuario = idUsuario;
     }
 
     public int getIdPersona() {
@@ -40,14 +36,6 @@ public class Persona {
 
     public void setIdPersona(int idPersona) {
         this.idPersona = idPersona;
-    }
-
-    public int getIdRol() {
-        return idRol;
-    }
-
-    public void setIdRol(int idRol) {
-        this.idRol = idRol;
     }
 
     public String getNomPersona() {
@@ -122,14 +110,13 @@ public class Persona {
         this.email = email;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public int getIdUsuario() {
+        return idUsuario;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
-
-         
-}
+    
+ }
 

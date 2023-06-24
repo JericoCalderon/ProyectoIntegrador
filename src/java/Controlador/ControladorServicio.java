@@ -47,6 +47,7 @@ public class ControladorServicio extends HttpServlet {
             acceso=listar;            
         }
         else if(action.equalsIgnoreCase("add")){
+            
             acceso=add;
         }
         else if(action.equalsIgnoreCase("Agregar")){
@@ -98,9 +99,8 @@ public class ControladorServicio extends HttpServlet {
         processRequest(request, response);
      
     }
-    
-
-    @Override
+        
+   @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>

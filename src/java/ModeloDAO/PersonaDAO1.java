@@ -1,4 +1,3 @@
-
 package ModeloDAO;
 
 import Config.Conexion;
@@ -8,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonaDAO implements CRUD{
+public class PersonaDAO1 implements CRUD{
     Conexion cn=new Conexion();
     Connection con;
     PreparedStatement ps;
@@ -18,7 +17,7 @@ public class PersonaDAO implements CRUD{
     @Override
     public List listar() {
         ArrayList<Persona>list=new ArrayList<>();
-        String sql="SELECT idPersona, nomPersona, apelPat, apelMat, fechNaci, dni, direccion, telefono, estado, email, idUsuario FROM persona where idUsuario != 1";
+        String sql="SELECT idPersona, nomPersona, apelPat, apelMat, fechNaci, dni, direccion, telefono, estado, email, idUsuario FROM persona where idUsuario = 1";
         try {
             con=cn.getConnection();
             ps=con.prepareStatement(sql);
@@ -45,7 +44,7 @@ public class PersonaDAO implements CRUD{
 
      @Override
     public Persona list(int idPersona) {
-       String sql="SELECT idPersona, nomPersona, apelPat, apelMat, fechNaci, dni, direccion, telefono, estado, email, idUsuario FROM persona where idUsuario != 1 and idPersona =  " + idPersona;
+       String sql="SELECT idPersona, nomPersona, apelPat, apelMat, fechNaci, dni, direccion, telefono, estado, email, idUsuario FROM persona where idUsuario = 1 and idPersona =  " + idPersona;
         try {
             con=cn.getConnection();
             ps=con.prepareStatement(sql);

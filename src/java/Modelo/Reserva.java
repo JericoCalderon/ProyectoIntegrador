@@ -11,11 +11,12 @@ public class Reserva {
         private int idTipo;
         private String formaPago;
         private String estado;
+        private String salaAtencion;
 
         public Reserva() {
         }
-        
-        public Reserva(int idReserva, int idPersona, int idServicio, String fechReserva, String horaReserva, int idTecnico, int idTipo, String formaPago, String estado) {
+
+    public Reserva(int idReserva, int idPersona, int idServicio, String fechReserva, String horaReserva, int idTecnico, int idTipo, String formaPago, String estado, String salaAtencion) {
         this.idReserva = idReserva;
         this.idPersona = idPersona;
         this.idServicio = idServicio;
@@ -25,7 +26,8 @@ public class Reserva {
         this.idTipo = idTipo;
         this.formaPago = formaPago;
         this.estado = estado;
-        }
+        this.salaAtencion = salaAtencion;
+    }
 
     public int getIdReserva() {
         return idReserva;
@@ -98,9 +100,13 @@ public class Reserva {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getSalaAtencion() {
+        return salaAtencion;
+    }
+
+    public void setSalaAtencion(String salaAtencion) {
+        this.salaAtencion = salaAtencion;
+    }
         
-    
-        
-    
-    
 }
