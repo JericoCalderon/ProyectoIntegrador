@@ -6,6 +6,8 @@ import java.util.List;
 import Config.Conexion;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class ServicioDAO implements CRUDSERVICIO {
@@ -16,7 +18,26 @@ public class ServicioDAO implements CRUDSERVICIO {
     ResultSet rs;
     Servicio se=new Servicio();
     
-    
+    public Servicio ConsultaPorId(int idServicio) {
+        Servicio servicio = new Servicio();
+        con = cn.getConnection();
+        String consulta = "SELECT * FROM servicio WHERE idServicio = " + idServicio;
+        try {
+            ps = con.prepareStatement(consulta);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                servicio.setIdServicio(rs.getInt("idServicio"));
+                servicio.setNomServicio(rs.getString("nomServicio"));              
+                servicio.setDescripcion(rs.getString("descripcion"));
+                servicio.setTiempo(rs.getString("tiempo"));             
+                servicio.setPrecio(Double.valueOf(rs.getString("precio")));
+                                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServicioDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return servicio; 
+    }
     @Override
     public List listar() {
         ArrayList<Servicio>list=new ArrayList<>();
