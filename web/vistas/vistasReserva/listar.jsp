@@ -16,6 +16,27 @@ if(session.getAttribute("usuario") != null)
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="js/BuscadorTabla.js" type="text/javascript"></script>
         <title>JSP Page</title>
+        <script type="text/javascript">
+            function confirmarEliminar()
+            {
+                var respuesta = confirm("¿Estás seguro que desees eliminar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function confirmarEdicion()
+            {
+                var respuesta = confirm("¿Estás seguro que desees editar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -67,8 +88,8 @@ if(session.getAttribute("usuario") != null)
                         <td class="text-center"><%= res.getEstado()%></td>
                         <td class="text-center"><%= res.getSalaAtencion()%></td>
                          <td class="text-center">
-                            <a class="btn btn-warning" href="ControladorReserva?accion=editar&idReserva=<%= res.getIdReserva()%>">Editar</a>
-                            <a class="btn btn-danger" href="ControladorReserva?accion=eliminar&idReserva=<%= res.getIdReserva()%>">Remove</a>
+                             <a class="btn btn-warning" href="ControladorReserva?accion=editar&idReserva=<%= res.getIdReserva()%>" onclick="return confirmarEdicion()">Editar</a>
+                            <a class="btn btn-danger" href="ControladorReserva?accion=eliminar&idReserva=<%= res.getIdReserva()%>" onclick="return confirmarEliminar()">Remove</a>
                         </td>
                     </tr>
                     <%}%>

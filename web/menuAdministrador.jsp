@@ -5,10 +5,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <title>Inicio</title>
+        <script type="text/javascript">
+            function confirmarCerrarSesion()
+            {
+                var respuesta = confirm("¿Estás seguro que desea cerrar la sesión?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>    
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -51,7 +61,7 @@
                         <a class="dropdown-item" href="#"><i class="fas fa-user"></i> -->  ${usuario.idUsuario} - ${usuario.nomUsuario}</a>
                         <div class="dropdown-divider"></div>
                         <div class="pull-right">
-                            <a href="ControladorUsuario?accion=cerrar" class="btn btn-default btn-flat">Cerrar Session</a>
+                            <a href="ControladorUsuario?accion=cerrar" class="btn btn-default btn-flat" onclick="return confirmarCerrarSesion()">Cerrar Session</a>
                         </div>
                     </div>
                 </div>

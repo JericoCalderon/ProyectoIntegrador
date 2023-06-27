@@ -11,6 +11,21 @@ if(session.getAttribute("usuario") != null)
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
+        <script type="text/javascript">
+            function edicionConfirmada() {
+                alert("¡Se editaron los datos correctamente!");
+            }
+
+            function confirmarRegreso()
+            {
+                var respuesta = confirm("¿Seguro que quieres regresar al listado de datos?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -42,8 +57,8 @@ if(session.getAttribute("usuario") != null)
                     <input class="form-control" type="text" name="txtEstado" value="<%= r.getEstado()%>"><br>
                     Sala Atención: <br>
                     <input class="form-control" type="text" name="txtSalaAtencion" value="<%= r.getSalaAtencion()%>"><br>
-                    <input class="btn btn-primary" type="submit" name="accion" value="Actualizar"> 
-                <a href="ControladorReserva?accion=listar">Regresar</a>
+                    <input class="btn btn-primary" type="submit" name="accion" value="Actualizar" onclick="edicionConfirmada()"> 
+                <a href="ControladorReserva?accion=listar" onclick="return confirmarRegreso()">Regresar</a>
             </form>
           </div>
         </div>

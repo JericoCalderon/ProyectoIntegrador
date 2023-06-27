@@ -6,8 +6,7 @@
 <%@page import="ModeloDAO.ServicioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-if(session.getAttribute("usuario") != null)
-{
+    if (session.getAttribute("usuario") != null) {
 %>
 <!DOCTYPE html>
 <html>
@@ -16,17 +15,38 @@ if(session.getAttribute("usuario") != null)
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="js/BuscadorTabla.js" type="text/javascript"></script>
         <title>JSP Page</title>
+        <script type="text/javascript">
+            function confirmarEliminar()
+            {
+                var respuesta = confirm("¿Estás seguro que desees eliminar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function confirmarEdicion()
+            {
+                var respuesta = confirm("¿Estás seguro que desees editar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
             <h1>Servicios SPA</h1>
-             <a class="btn btn-success" href="ControladorServicio?accion=add">Agregar Nuevo Servicio</a>
-             <br>
-             <br>
-             <a class="btn btn-success" href="ControladorServicio?accion=listar">Mostrar Datos</a>
+            <a class="btn btn-success" href="ControladorServicio?accion=add">Agregar Nuevo Servicio</a>
             <br>
             <br>
-             <label>Buscar: </label>
+            <a class="btn btn-success" href="ControladorServicio?accion=listar">Mostrar Datos</a>
+            <br>
+            <br>
+            <label>Buscar: </label>
             <input id="searchTerm" type="text" onkeyup="doSearch()" />
             <br>
             <br>
@@ -42,12 +62,12 @@ if(session.getAttribute("usuario") != null)
                     </tr>
                 </thead>
                 <%
-                    ServicioDAO dao=new ServicioDAO();
-                    List<Servicio>list=dao.listar();
-                    Iterator<Servicio>iter=list.iterator();
-                    Servicio ser=null;
-                    while(iter.hasNext()){
-                        ser=iter.next();
+                    ServicioDAO dao = new ServicioDAO();
+                    List<Servicio> list = dao.listar();
+                    Iterator<Servicio> iter = list.iterator();
+                    Servicio ser = null;
+                    while (iter.hasNext()) {
+                        ser = iter.next();
                 %>
                 <tbody>
                     <tr>
@@ -56,19 +76,19 @@ if(session.getAttribute("usuario") != null)
                         <td class="text-center"><%= ser.getDescripcion()%></td>
                         <td class="text-center"><%= ser.getTiempo()%></td>
                         <td class="text-center"><%= ser.getPrecio()%></td>
-                         <td class="text-center">
-                            <a class="btn btn-warning" href="ControladorServicio?accion=editar&idServicio=<%= ser.getIdServicio()%>">Editar</a>
-                            <a class="btn btn-danger" href="ControladorServicio?accion=eliminar&idServicio=<%= ser.getIdServicio()%>">Remove</a>
+                        <td class="text-center">
+                            <a class="btn btn-warning" href="ControladorServicio?accion=editar&idServicio=<%= ser.getIdServicio()%>" onclick="return confirmarEdicion()">Editar</a>
+                            <a class="btn btn-danger" href="ControladorServicio?accion=eliminar&idServicio=<%= ser.getIdServicio()%>" onclick="return confirmarEliminar()">Remove</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
-    </div>
+        </div>
     </body>
 </html>
 <%
-    }else{
+    } else {
         response.sendRedirect("index.jsp");
     }
 %>

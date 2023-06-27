@@ -15,6 +15,27 @@
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="js/BuscadorTabla.js" type="text/javascript"></script>
         <title>JSP Page</title>
+        <script type="text/javascript">
+            function confirmarEliminar()
+            {
+                var respuesta = confirm("¿Estás seguro que desees eliminar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function confirmarEdicion()
+            {
+                var respuesta = confirm("¿Estás seguro que desees editar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -51,8 +72,8 @@
                         <td class="text-center"><%= ins.getIdInsumo()%></td>
                         <td class="text-center"><%= ins.getNomInsumo()%></td>
                         <td class="text-center">
-                            <a class="btn btn-warning" href="ControladorInsumos?accion=editar&idInsumo=<%= ins.getIdInsumo()%>">Editar</a>
-                            <a class="btn btn-danger" href="ControladorInsumos?accion=eliminar&idInsumo=<%= ins.getIdInsumo()%>">Remove</a>
+                            <a class="btn btn-warning" href="ControladorInsumos?accion=editar&idInsumo=<%= ins.getIdInsumo()%>" onclick="return confirmarEdicion()">Editar</a>
+                            <a class="btn btn-danger" href="ControladorInsumos?accion=eliminar&idInsumo=<%= ins.getIdInsumo()%>" onclick="return confirmarEliminar()">Remove</a>
                         </td>
                     </tr>
                     <%}%>

@@ -6,8 +6,7 @@
 <%@page import="ModeloDAO.TecnicoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-if(session.getAttribute("usuario") != null)
-{
+    if (session.getAttribute("usuario") != null) {
 %>
 <!DOCTYPE html>
 <html>
@@ -16,17 +15,38 @@ if(session.getAttribute("usuario") != null)
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="js/BuscadorTabla.js" type="text/javascript"></script>
         <title>JSP Page</title>
+        <script type="text/javascript">
+            function confirmarEliminar()
+            {
+                var respuesta = confirm("¿Estás seguro que desees eliminar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            function confirmarEdicion()
+            {
+                var respuesta = confirm("¿Estás seguro que desees editar el registro?");
+                if (respuesta == true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="container">
             <h1>Personas</h1>
-             <a class="btn btn-success" href="ControladorTecnico?accion=add">Agregar Nuevo Técnico</a>
-             <br>
-             <br>
-             <a class="btn btn-success" href="ControladorTecnico?accion=listar">Mostrar Datos</a>
+            <a class="btn btn-success" href="ControladorTecnico?accion=add">Agregar Nuevo Técnico</a>
             <br>
             <br>
-             <label>Buscar: </label>
+            <a class="btn btn-success" href="ControladorTecnico?accion=listar">Mostrar Datos</a>
+            <br>
+            <br>
+            <label>Buscar: </label>
             <input id="searchTerm" type="text" onkeyup="doSearch()" />
             <br>
             <br>
@@ -45,12 +65,12 @@ if(session.getAttribute("usuario") != null)
                     </tr>
                 </thead>
                 <%
-                    TecnicoDAO dao=new TecnicoDAO();
-                    List<Tecnico>list=dao.listar();
-                    Iterator<Tecnico>iter=list.iterator();
-                    Tecnico tec=null;
-                    while(iter.hasNext()){
-                        tec=iter.next();
+                    TecnicoDAO dao = new TecnicoDAO();
+                    List<Tecnico> list = dao.listar();
+                    Iterator<Tecnico> iter = list.iterator();
+                    Tecnico tec = null;
+                    while (iter.hasNext()) {
+                        tec = iter.next();
                 %>
                 <tbody>
                     <tr>
@@ -62,19 +82,19 @@ if(session.getAttribute("usuario") != null)
                         <td class="text-center"><%= tec.getEmail()%></td>
                         <td class="text-center"><%= tec.getTelefono()%></td>
                         <td class="text-center"><%= tec.getEstado()%></td>
-                         <td class="text-center">
-                            <a class="btn btn-warning" href="ControladorTecnico?accion=editar&idTecnico=<%= tec.getIdTecnico()%>">Editar</a>
-                            <a class="btn btn-danger" href="ControladorTecnico?accion=eliminar&idTecnico=<%= tec.getIdTecnico()%>">Remove</a>
+                        <td class="text-center">
+                            <a class="btn btn-warning" href="ControladorTecnico?accion=editar&idTecnico=<%= tec.getIdTecnico()%>" onclick="return confirmarEdicion()">Editar</a>
+                            <a class="btn btn-danger" href="ControladorTecnico?accion=eliminar&idTecnico=<%= tec.getIdTecnico()%>" onclick="return confirmarEliminar()">Remove</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
-    </div>
+        </div>
     </body>
 </html>
 <%
-    }else{
+    } else {
         response.sendRedirect("index.jsp");
     }
 %>
