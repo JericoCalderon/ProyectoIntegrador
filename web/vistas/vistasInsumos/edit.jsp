@@ -10,15 +10,15 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
-         <script type="text/javascript">
-            function edicionConfirmada(){
+        <script type="text/javascript">
+            function edicionConfirmada() {
                 alert("¡Se editaron los datos correctamente!");
             }
-            
+
             function confirmarRegreso()
             {
                 var respuesta = confirm("¿Seguro que quieres regresar al listado de datos?");
-                if(respuesta == true) {
+                if (respuesta == true) {
                     return true;
                 } else {
                     return false;
@@ -45,6 +45,7 @@
                 </form>
             </div>
         </div>
+        <script src="js/noBack.js" type="text/javascript"></script>
     </body>
 </html>
 <%

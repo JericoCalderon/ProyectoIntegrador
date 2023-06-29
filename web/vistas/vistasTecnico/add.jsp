@@ -47,8 +47,8 @@
                     <a href="ControladorTecnico?accion=listar" onclick="return confirmarRegreso()">Regresar</a>
                 </form>
             </div>
-
         </div>
+        <script src="js/noBack.js" type="text/javascript"></script>
     </body>
 </html>
 <%

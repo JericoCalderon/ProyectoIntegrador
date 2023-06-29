@@ -46,9 +46,16 @@
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active" href="ControladorInsumos?accion=listar" target="miContenedor">Insumos</a>
                     </li>
-                    <li class="nav-item">
-                        <a style="margin-left: 10px; border: none" class="nav-link active" href="#" target="miContenedor">Reportes</a>
-                    </li> 
+                    <div class="btn-group">  
+                        <button type="button" class="nav-link btn btn-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none; color: black;  text-decoration: none;">Reportes</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="ControladorServicio?accion=reporte1">Reporte de Servicios</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="ControladorServicio?accion=reporte2">Reporte de Servicios por Cliente</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="ControladorServicio?accion=reporte3">Resumen de Servicios por Ténico</a>
+                        </div>
+                    </div>
                     <li class="nav-item">
                         <a style="margin-left: 10px; border: none" class="nav-link active" href="Controlador?menu=Venta&accion=default" target="miContenedor">Comprobantes</a>
                     </li>            
@@ -78,6 +85,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="js/noBack.js" type="text/javascript"></script>
     </body>
 </html>
 <%

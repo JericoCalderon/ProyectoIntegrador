@@ -9,14 +9,14 @@
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
         <script type="text/javascript">
-            function confirmarInsersion(){
+            function confirmarInsersion() {
                 alert("¡Se agregaron los datos correctamente!");
             }
-            
+
             function confirmarRegreso()
             {
                 var respuesta = confirm("¿Seguro que quieres regresar al listado de datos?");
-                if(respuesta == true) {
+                if (respuesta == true) {
                     return true;
                 } else {
                     return false;
@@ -53,8 +53,8 @@
                     <a href="ControladorPersona?accion=listar" onclick="return confirmarRegreso()">Regresar</a>
                 </form>
             </div>
-
         </div>
+        <script src="js/noBack.js" type="text/javascript"></script>
     </body>
 </html>
 <%

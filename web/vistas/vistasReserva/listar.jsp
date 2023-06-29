@@ -6,8 +6,7 @@
 <%@page import="ModeloDAO.ReservaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-if(session.getAttribute("usuario") != null)
-{
+    if (session.getAttribute("usuario") != null) {
 %>
 <!DOCTYPE html>
 <html>
@@ -41,13 +40,13 @@ if(session.getAttribute("usuario") != null)
     <body>
         <div class="container">
             <h1>Reservas</h1>
-             <a class="btn btn-success" href="ControladorReserva?accion=add">Agregar Nueva Reserva</a>
-             <br>
-             <br>
-             <a class="btn btn-success" href="ControladorReserva?accion=listar">Mostrar Datos</a>
+            <a class="btn btn-success" href="ControladorReserva?accion=add">Agregar Nueva Reserva</a>
             <br>
             <br>
-             <label>Buscar: </label>
+            <a class="btn btn-success" href="ControladorReserva?accion=listar">Mostrar Datos</a>
+            <br>
+            <br>
+            <label>Buscar: </label>
             <input id="searchTerm" type="text" onkeyup="doSearch()" />
             <br>
             <br>
@@ -68,12 +67,12 @@ if(session.getAttribute("usuario") != null)
                     </tr>
                 </thead>
                 <%
-                    ReservaDAO dao=new ReservaDAO();
-                    List<Reserva>list=dao.listar();
-                    Iterator<Reserva>iter=list.iterator();
-                    Reserva res=null;
-                    while(iter.hasNext()){
-                        res=iter.next();
+                    ReservaDAO dao = new ReservaDAO();
+                    List<Reserva> list = dao.listar();
+                    Iterator<Reserva> iter = list.iterator();
+                    Reserva res = null;
+                    while (iter.hasNext()) {
+                        res = iter.next();
                 %>
                 <tbody>
                     <tr>
@@ -87,19 +86,20 @@ if(session.getAttribute("usuario") != null)
                         <td class="text-center"><%= res.getFormaPago()%></td>
                         <td class="text-center"><%= res.getEstado()%></td>
                         <td class="text-center"><%= res.getSalaAtencion()%></td>
-                         <td class="text-center">
-                             <a class="btn btn-warning" href="ControladorReserva?accion=editar&idReserva=<%= res.getIdReserva()%>" onclick="return confirmarEdicion()">Editar</a>
+                        <td class="text-center">
+                            <a class="btn btn-warning" href="ControladorReserva?accion=editar&idReserva=<%= res.getIdReserva()%>" onclick="return confirmarEdicion()">Editar</a>
                             <a class="btn btn-danger" href="ControladorReserva?accion=eliminar&idReserva=<%= res.getIdReserva()%>" onclick="return confirmarEliminar()">Remove</a>
                         </td>
                     </tr>
                     <%}%>
                 </tbody>
             </table>
-    </div>
+        </div>
+        <script src="js/noBack.js" type="text/javascript"></script>
     </body>
 </html>
 <%
-    }else{
+    } else {
         response.sendRedirect("index.jsp");
     }
 %>

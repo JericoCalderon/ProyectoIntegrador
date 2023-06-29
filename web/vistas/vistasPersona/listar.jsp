@@ -15,7 +15,7 @@
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="js/BuscadorTabla.js" type="text/javascript"></script>
         <title>JSP Page</title>
-         <script type="text/javascript">
+        <script type="text/javascript">
             function confirmarEliminar()
             {
                 var respuesta = confirm("¿Estás seguro que desees eliminar el registro?");
@@ -98,6 +98,7 @@
                 </tbody>
             </table>
         </div>
+        <script src="js/noBack.js" type="text/javascript"></script>
     </body>
 </html>
 <%
