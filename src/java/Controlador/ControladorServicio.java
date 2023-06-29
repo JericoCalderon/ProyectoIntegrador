@@ -17,9 +17,9 @@ public class ControladorServicio extends HttpServlet {
     String listar = "vistas/vistasServicio/listar.jsp";
     String add = "vistas/vistasServicio/add.jsp";
     String edit = "vistas/vistasServicio/edit.jsp";
-    String reporte1 = "reportes/reporteServicios/.....";
-    String reporte2 = "reportes/reporteServiciosCliente/.......";
-    String reporte3 = "reportes/reporteResumen/.......";
+    String reporte1 = "reportes/reporteServicios/reportServicios.jsp";
+    String reporte2 = "reportes/reporteServiciosCliente/reportServiciosCliente.jsp";
+    String reporte3 = "reportes/reporteResumen/reportResumen.jsp";
     Servicio s = new Servicio();
     ServicioDAO dao = new ServicioDAO();
 
