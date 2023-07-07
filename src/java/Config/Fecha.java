@@ -19,7 +19,7 @@ public class Fecha {
     }
 
     public String FechaBD() {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         fecha = sdf.format(calendar.getTime());
         return fecha;
     }

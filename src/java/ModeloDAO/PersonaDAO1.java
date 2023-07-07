@@ -14,13 +14,13 @@ public class PersonaDAO1 implements CRUD{
     ResultSet rs;
     Persona p=new Persona();
     
-    public Persona BuscarCliente(int idPersona){
+    public Persona BuscarCliente(String nomPersona){
         Persona persona = new Persona();
-        String consulta = "SELECT * FROM persona WHERE idPersona = ? " ;
+        String consulta = "SELECT * FROM persona WHERE nomPersona = ? " ;
         con = cn.getConnection();
         try {
             ps = con.prepareStatement(consulta); 
-            ps.setInt(1, idPersona);
+            ps.setString(1, nomPersona);
             rs = ps.executeQuery();
             while(rs.next()){
                 persona.setIdPersona(rs.getInt("idPersona"));              

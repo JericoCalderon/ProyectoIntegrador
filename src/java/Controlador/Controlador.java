@@ -74,8 +74,8 @@ public class Controlador extends HttpServlet {
         if (menu.equals("Ventas")) {
             switch (accion) {
                 case "BuscarPersona":                 
-                    int idPersona = Integer.parseInt(request.getParameter("idPersona"));
-                    persona = personaDAO.BuscarCliente(idPersona);
+                    String nomPersona = request.getParameter("nomPersona");
+                    persona = personaDAO.BuscarCliente(nomPersona);
                     request.setAttribute("cliente", persona);
                     break;                  
                     
@@ -113,12 +113,12 @@ public class Controlador extends HttpServlet {
                     descripcion = request.getParameter("descripcion");   
                     tiempo = request.getParameter("tiempo"); 
                     precio = Double.parseDouble(request.getParameter("precio"));
-                    cantidad = Integer.parseInt(request.getParameter("cantidad"));
-                    subtotal = precio * cantidad;
+                    //cantidad = Integer.parseInt(request.getParameter("cantidad"));
+                    subtotal = precio;
                     comprobante.setItem(item);       
                     comprobante.setNomServicio(nomServicio);
                     comprobante.setDescripcionServicio(descripcion);
-                    comprobante.setCantidad(cantidad); 
+                    //comprobante.setCantidad(cantidad); 
                     comprobante.setTiempo(tiempo);
                     comprobante.setPrecio(precio);
                     comprobante.setSubtotal(subtotal);                               

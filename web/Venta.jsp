@@ -34,12 +34,9 @@
                         <form method="post" action="Controlador?menu=Ventas">
                             <div class="row">
                                 <div class="col-md-3 d-flex">
-                                    <input type="number" name="idPersona" class="form-control" placeholder="id cliente" value="${cliente.getIdPersona()}">
+                                    <input type="text" name="nomPersona" class="form-control" placeholder="nombre" value="${cliente.getNomPersona()}">
                                     <input type="submit" name="accion" value="BuscarPersona" class="btn btn-outline-dark">
-                                </div> 
-                                <div class="col-md-3 d-flex">
-                                    <input type="text" name="nomPersona" class="form-control" placeholder="Nombre cliente" value="${cliente.getNomPersona()}">
-                                </div>
+                                </div>                             
                                 <div class="col-md-3 d-flex">
                                     <input type="text" name="apelPat" class="form-control" placeholder="ApellidoP cliente" value="${cliente.getApelPat()}">
                                 </div>
@@ -72,11 +69,7 @@
                                 </div>
                                 <div class="col-md-4 d-flex form-group">
                                     <input type="text" name="precio" class="form-control" placeholder="s/ 0000.00" value="${servicio.getPrecio()}">
-                                </div> 
-                                <div class="col-md-8 d-flex form-group">
-                                    <input type="number" value="" name="cantidad" id="cantidad" class="form-control" placeholder="Cantidad">                           
-                                </div>
-
+                                </div>                               
                             </div> 
 
                             <input type="submit" name="accion" value="AgregarServicio" class="btn btn-outline-dark">
@@ -98,8 +91,7 @@
                                     <th scope="col">NombreServicio</th> 
                                     <th scope="col">Descripcion</th>  
                                     <th scope="col">Tiempo</th>
-                                    <th scope="col">Fecha</th>
-                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Fecha</th>                                   
                                     <th scope="col">Precio</th> 
                                     <th scope="col">Total</th>
                                     <th scope="col" class="accion">Acciones</th>
@@ -115,8 +107,7 @@
                                         <td style="width: 250px;">${lista.getNomServicio()}</td>
                                         <td style="width: 350px;">${lista.getDescripcionServicio()}</td>   
                                         <td style="width: 30px;">${lista.getTiempo()}</td>
-                                        <td style="width: 110px;">${lista.getFecha()}</td>   
-                                        <td style="width: 30px;">${lista.getCantidad()}</td>
+                                        <td style="width: 110px;">${lista.getFecha()}</td>                                      
                                         <td>S/ ${lista.getPrecio()}</td>
                                         <td>S/ ${lista.getSubtotal()}</td>
                                         <td class="columna">
