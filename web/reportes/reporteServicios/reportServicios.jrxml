@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportServicios" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="116dc732-e4ab-47fd-a7f2-09e4e8338649">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Db_integrador"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<subDataset name="Ds_Integrador" uuid="5b078c3d-810b-43ea-b0fd-66127ce34620">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="nomServicio" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nomServicio"/>
+			<property name="com.jaspersoft.studio.field.label" value="nomServicio"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+		</field>
+		<field name="tiempo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="tiempo"/>
+			<property name="com.jaspersoft.studio.field.label" value="tiempo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+		</field>
+		<field name="precio" class="java.lang.Double">
+			<property name="com.jaspersoft.studio.field.name" value="precio"/>
+			<property name="com.jaspersoft.studio.field.label" value="precio"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+		</field>
+		<field name="fechReserva" class="java.sql.Date">
+			<property name="com.jaspersoft.studio.field.name" value="fechReserva"/>
+			<property name="com.jaspersoft.studio.field.label" value="fechReserva"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="reserva"/>
+		</field>
+		<field name="horaReserva" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="horaReserva"/>
+			<property name="com.jaspersoft.studio.field.label" value="horaReserva"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="reserva"/>
+		</field>
+		<field name="salaAtencion" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="salaAtencion"/>
+			<property name="com.jaspersoft.studio.field.label" value="salaAtencion"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="reserva"/>
+		</field>
+		<field name="nomTecnico" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nomTecnico"/>
+			<property name="com.jaspersoft.studio.field.label" value="nomTecnico"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tecnico"/>
+		</field>
+		<field name="apelPat" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="apelPat"/>
+			<property name="com.jaspersoft.studio.field.label" value="apelPat"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tecnico"/>
+		</field>
+		<field name="apelMat" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="apelMat"/>
+			<property name="com.jaspersoft.studio.field.label" value="apelMat"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="tecnico"/>
+		</field>
+	</subDataset>
+	<parameter name="logoServicios" class="java.io.InputStream"/>
+	<parameter name="ds" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[SELECT S.nomServicio, S.tiempo, S.precio, R.fechReserva, R.horaReserva, R.salaAtencion, T.nomTecnico, T.apelPat, T.apelMat
+FROM servicio S
+INNER JOIN reserva R 
+ON S.idServicio = R.idServicio
+INNER JOIN tecnico T
+ON R.idTecnico = T.idTecnico]]>
+	</queryString>
+	<field name="nomServicio" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nomServicio"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomServicio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="tiempo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="tiempo"/>
+		<property name="com.jaspersoft.studio.field.label" value="tiempo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="precio" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.name" value="precio"/>
+		<property name="com.jaspersoft.studio.field.label" value="precio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="servicio"/>
+	</field>
+	<field name="fechReserva" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="fechReserva"/>
+		<property name="com.jaspersoft.studio.field.label" value="fechReserva"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reserva"/>
+	</field>
+	<field name="horaReserva" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="horaReserva"/>
+		<property name="com.jaspersoft.studio.field.label" value="horaReserva"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reserva"/>
+	</field>
+	<field name="salaAtencion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="salaAtencion"/>
+		<property name="com.jaspersoft.studio.field.label" value="salaAtencion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="reserva"/>
+	</field>
+	<field name="nomTecnico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nomTecnico"/>
+		<property name="com.jaspersoft.studio.field.label" value="nomTecnico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tecnico"/>
+	</field>
+	<field name="apelPat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apelPat"/>
+		<property name="com.jaspersoft.studio.field.label" value="apelPat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tecnico"/>
+	</field>
+	<field name="apelMat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="apelMat"/>
+		<property name="com.jaspersoft.studio.field.label" value="apelMat"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tecnico"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="157" splitType="Stretch">
+			<staticText>
+				<reportElement x="220" y="20" width="400" height="60" uuid="168d3a7a-490c-4123-870a-646f751a5c1b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="27"/>
+				</textElement>
+				<text><![CDATA[Reporte de Servicios]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="219" y="90" width="200" height="30" uuid="5560595c-3c46-428d-bc6d-27889cebdece"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Fecha y Hora de Impresión: ]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="419" y="90" width="140" height="30" uuid="45e385db-16d4-4f53-8b3e-d24643a46563"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="519" y="90" width="140" height="30" uuid="122191f5-b0c3-444c-8b30-12060f6001f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="140" width="792" height="1" uuid="dff356b9-2600-46f5-9324-b8992d77c26b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<image>
+				<reportElement x="10" y="30" width="190" height="90" uuid="a67f492d-ebb1-4447-a707-79bfd1509f84">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["C:/Users/jeric/Downloads/Servicios.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="791" height="40" forecolor="#FFFFFF" backcolor="#336B87" uuid="0f907c2b-b81c-4055-b0bc-201d497fca86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Servicios Brindados]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="244" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="60" width="100" height="30" uuid="eea24383-f7fd-45e7-88d6-70a253a9ce6d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomServicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="30" width="100" height="30" backcolor="#67C2D6" uuid="b365ba1c-2d0d-43c5-b427-65c52939465a"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Servicio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="60" width="60" height="30" uuid="70d07fad-d450-44c0-bd16-3666938bd3e3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tiempo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="30" width="60" height="30" backcolor="#67C2D6" uuid="ed3b7389-641a-4603-b0df-fff23bdc26d4"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tiempo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="160" y="30" width="60" height="30" backcolor="#67C2D6" uuid="fc6c4721-831e-4253-8af9-caff5f30e550"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="60" width="60" height="30" uuid="f2d2af05-3195-4eaf-92c3-799f6b3ff6ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="60" width="100" height="30" uuid="265aeefd-255a-4f6a-895f-018ddf086598"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechReserva}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="220" y="30" width="100" height="30" backcolor="#67C2D6" uuid="f67fdcb9-293e-45a4-8358-5acb805ec63e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Reserva]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="320" y="30" width="100" height="30" backcolor="#67C2D6" uuid="de9b4e2f-9248-4431-919e-e28d2a0e7983"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora Reserva]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="320" y="60" width="100" height="30" uuid="6be59e73-fa8e-4272-b145-6782f67eba17"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaReserva}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="60" width="90" height="30" uuid="ba552b7b-051b-4988-a6b5-0dbdd7c89c03"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{salaAtencion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="30" width="90" height="30" backcolor="#67C2D6" uuid="a0e70b18-2775-41cf-8f58-42bf460bcea1"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sala Atención]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="510" y="30" width="80" height="30" backcolor="#67C2D6" uuid="60604eea-e807-440a-9929-a5211ddf0406"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Técnico]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="510" y="60" width="80" height="30" uuid="3d28ed34-2b9d-4293-9966-b2ad049e9b99"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomTecnico}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="590" y="60" width="100" height="30" uuid="6d720f3e-7561-47a3-bbcf-97af015756b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apelPat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="590" y="30" width="100" height="30" backcolor="#67C2D6" uuid="ceba66b4-d979-449e-a50c-160fcd6bf40b"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ap. Paterno]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="690" y="60" width="101" height="30" uuid="c7c19bd2-f581-4576-a897-c39544702c2d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apelPat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="690" y="30" width="101" height="30" backcolor="#67C2D6" uuid="78879579-8353-40fb-bcc6-5cf4e9edeab8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ap. Materno]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>
