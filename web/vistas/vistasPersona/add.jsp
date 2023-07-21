@@ -44,7 +44,12 @@
                     Teléfono: <br>
                     <input class="form-control" type="number" name="txtTelefono" placeholder="Ingresar el Teléfono"><br>
                     Estado: <br>
+                    <!-- 
                     <input class="form-control" type="text" name="txtEstado" placeholder="Ingresar Estado: 'Activo'"><br>
+                    -->
+                    <select class="form-control" name="txtEstado">
+                        <option value="value1">Activo</option>
+                    </select><br>
                     Email: <br>
                     <input class="form-control" type="email" name="txtEmail" placeholder="Ingresar el Email"><br>
                     Usuario: <br>
