@@ -48,6 +48,10 @@
         <servlet-name>ControladorInsumos</servlet-name>
         <url-pattern>/ControladorInsumos</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MiServlet</servlet-name>
+        <url-pattern>/MiServlet</url-pattern> 
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
