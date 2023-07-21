@@ -49,6 +49,7 @@
                     -->
                     <select class="form-control" name="txtEstado">
                         <option value="value1">Activo</option>
+                        <option value="value1">Inactivo</option>
                     </select><br>
                     Email: <br>
                     <input class="form-control" type="email" name="txtEmail" placeholder="Ingresar el Email"><br>
