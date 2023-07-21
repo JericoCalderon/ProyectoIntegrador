@@ -125,7 +125,7 @@
                     <div class="card-footer d-flex">
                         <div class="col-md-8 text-center">
                             <a class="btn btn-outline-dark" onclick="window.print()" href="Controlador?menu=Ventas&accion=GenerarVenta">Generar Venta</a>
-                            <a class="btn btn-outline-dark" href="Controlador?menu=Venta&accion=NuevaVenta">Nueva Venta</a>
+                               <a class="btn btn-outline-dark" href="email.jsp">Email</a>
 
                         </div>
                         <div class="col-md-4">
