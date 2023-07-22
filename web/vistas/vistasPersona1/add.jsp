@@ -48,7 +48,12 @@
                     Email: <br>
                     <input class="form-control" type="email" name="txtEmail" placeholder="Ingresar el Email"><br>
                     Usuario: <br>
+                    <!--
                     <input class="form-control" type="number" name="txtIdUsuario" placeholder="Usuario del Cliente: 1"><br>
+                    -->
+                    <select class="form-control" name="txtIdUsuario">
+                        <option value="value1">1</option>
+                    </select><br>
                     <input class="btn btn-primary" type="submit" name="accion" value="Agregar" onclick="confirmarInsersion()">
                     <a href="ControladorPersona1?accion=listar" onclick="return confirmarRegreso()">Regresar</a>
                 </form>
